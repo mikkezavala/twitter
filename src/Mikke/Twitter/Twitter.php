@@ -140,7 +140,8 @@ class Twitter{
 		$this->api_endpoint = 'oauth/authenticate';
 		$this->api_request_url = join(array($this->api_url, $this->api_endpoint)).'?oauth_token='.$this->api_token;
 		
-		ob_clean();
+		//Clean Buffers... its healthy
+		if(ob_get_length()){ ob_clean();}
 		header('Location: '.$this->api_request_url);
 		exit;
 		return(true);		
@@ -154,7 +155,9 @@ class Twitter{
 		$this->api_endpoint = 'oauth/authorize';
 		$this->api_request_url = join(array($this->api_url, $this->api_endpoint)).'?oauth_token='.$this->api_token;
 		
-		ob_clean();
+		//Clean Buffers... its healthy
+		if(ob_get_length()){ ob_clean();}
+		
 		header('Location: '.$this->api_request_url);
 		exit;
 		return(true);
