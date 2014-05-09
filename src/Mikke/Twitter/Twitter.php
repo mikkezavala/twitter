@@ -12,6 +12,12 @@ class Twitter{
 	*/
 	protected $api_url = 'https://api.twitter.com/';
 	/**
+	* The Application APi URL.
+	*
+	* @var string
+	*/
+	protected $api_callback = '';
+	/**
 	* The Application APi Method.
 	*
 	* @var string
@@ -84,6 +90,7 @@ class Twitter{
 			$this->api_secret = array_get($setup, 'api_secret');
 			$this->api_token = array_get($setup, 'api_token');
 			$this->api_token_secret = array_get($setup, 'api_token_secret');
+			$this->api_callback = array_get($setup, 'api_callback');
 			
 			$this->api_url = array_get($setup, 'api_url', $this->api_url);
 			$this->time_stamp = time();
@@ -96,7 +103,7 @@ class Twitter{
 		$this->api_request_url = join(array($this->api_url, $this->api_endpoint));
 		
 		$request_opts = array(
-							'oauth_callback'			=> 'http://mikkedev.com/twitter/validate',
+							'oauth_callback'			=> $this->api_callback,
 							'oauth_consumer_key'		=> $this->api_key,
 							'oauth_nonce'				=> $this->generate_nonce(),							
 							'oauth_signature_method'	=> 'HMAC-SHA1',

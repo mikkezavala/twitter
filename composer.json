@@ -1,6 +1,6 @@
 {
     "name": "mikke/twitter",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Small TW Connector",
     "authors": [
         {
@@ -9,7 +9,7 @@
         }
     ],
 	"dist": {
-        "url": "https://github.com/mikkezavala/twitter/archive/0.0.3.zip",
+        "url": "https://github.com/mikkezavala/twitter/archive/0.0.4.zip",
         "type": "zip"
     },
     "require": {
