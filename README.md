@@ -18,19 +18,11 @@ You need to add the repo for the project first in your composer.json:
 
 ```
 	"repositories": [
-	    {
-	        "type":"package",
-	        "package": {
-	          "name": "mikkezavala/twitter-connect",
-	          "version":"master",
-	          "source": {
-	              "url": "https://github.com/mikkezavala/twitter-connect.git",
-	              "type": "git",
-	              "reference":"master"
-	            }
-	        }
-	    }
-	]
+        {
+            "type":"vcs",
+            "url": "https://github.com/mikkezavala/twitter.git"
+        }
+    ]
 ```
 
 In the same require the package:
@@ -38,7 +30,7 @@ In the same require the package:
 ```
 	{
 	    "require": {
-			"mikkezavala/twitter-connect": "dev-master"
+			"mikke/twitter": ">=0.0.4",
 	    }
 	}
 ```
@@ -54,7 +46,7 @@ You can add the alias in your app/config/app.php
 
 ```php
 
-		'TwitterConnect'  => 'Mikkezavala\TwitterConnect\TwitterConnect',
+		'Twitter'  		  => 'Mikke\Twitter\Twitter',
 ```
 
 
@@ -73,6 +65,7 @@ File: app/config/api.php
 		'twitter' => array(
 			'api_key' => 'XXXXXXXXXXXXXXX',
 			'api_secret' => 'XXXXXXXXXXXXXXXXXXXX',
+			'api_callback' => 'http://some.com/callback',
 			'api_token' => '',
 			'api_token_secret' => '',
 		)

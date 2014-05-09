@@ -224,10 +224,7 @@ class Twitter{
 							'oauth_token_secret'		=> $this->api_token_secret,
 							'oauth_version'				=> '1.0'
 						);
-		
-		error_log('Parsed Data');
-		error_log(print_r($request_opts, true));
-		
+			
 		$this->oauth_signature = $this->make_signature($request_opts);
 		array_set($request_opts, 'oauth_signature', $this->oauth_signature);
 		uksort($request_opts, 'strcmp');		
@@ -239,10 +236,6 @@ class Twitter{
 		$this->api_headers[] = 'Authorization: OAuth '.implode(', ', $auth_nodes);
 		
 		parse_str($this->callService(), $data);
-		error_log('Here');
-		error_log(print_r($data, true));
-		error_log(print_r($this->api_headers, true));
-		
 		return ($data);	
 	}
 	/*!
