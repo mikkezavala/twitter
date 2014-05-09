@@ -11,7 +11,7 @@
 	"dist": {
         "url": "https://github.com/mikkezavala/twitter/archive/v0.0.3.zip",
         "type": "zip"
-    }
+    },
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.1.*"
