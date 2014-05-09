@@ -1,0 +1,20 @@
+{
+    "name": "mikke/twitter",
+    "description": "",
+    "authors": [
+        {
+            "name": "Mikke Zavala",
+            "email": "miguel@mikkezavala.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mikke\\Twitter": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
