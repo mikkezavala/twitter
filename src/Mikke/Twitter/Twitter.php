@@ -235,8 +235,7 @@ class Twitter{
 		
 		$this->api_headers[] = 'Authorization: OAuth '.implode(', ', $auth_nodes);
 		
-		parse_str($this->callService(), $data);
-		return ($data);	
+		return (json_decode($this->callService()));	
 	}
 	/*!
 	 * Call to the server
